@@ -24,4 +24,9 @@ server.get('/api/cohorts', async (req, res) => {
     res.json(cohorts);
 });
 
+server.get('/api/students', async (req, res) => {
+    const students = await db('students');
+    res.json(students);
+})
+
 module.exports = server;
