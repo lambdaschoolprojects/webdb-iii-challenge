@@ -15,4 +15,13 @@ const server = express();
 
 server.use(express.json());
 
+server.get('/', (req, res) => {
+    res.json({ message: "Hi" });
+});
+
+server.get('/api/cohorts', async (req, res) => {
+    const cohorts = await db('cohorts');
+    res.json(cohorts);
+});
+
 module.exports = server;
